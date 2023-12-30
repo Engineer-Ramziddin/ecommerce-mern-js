@@ -2,12 +2,16 @@ const express = require('express')
 const connectDB = require('./config/connectDB');
 const app = express()
 const bodyParser = require('body-parser');
-const authRouter = require('./routes/authRoute');
-const productRoute = require('./routes/productRoute')
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const dotenv  = require('dotenv').config();
 const cookieParser = require("cookie-parser");
 const morgan = require('morgan')
+
+const authRouter = require('./routes/authRoute');
+const productRoute = require('./routes/productRoute');
+const blogcategoryRouter = require("./routes/blogCatRoute");
+const blogRoute = require('./routes/blogRoute');
+const couponRouter = require("./routes/couponRoute");
 
 const port = process.env.PORT || 4000
 
@@ -19,7 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 
 app.use('/api/user', authRouter);
-app.use('/api/product', productRoute)
+app.use('/api/product', productRoute);
+app.use('/api/blog', blogRoute);
+app.use("/api/blogcategory", blogcategoryRouter);
+app.use("/api/coupon", couponRouter);
 app.use("/", (req, res) => {
     res.send("hello from serve")
 });
