@@ -134,6 +134,28 @@ const updatedUser = expressAsyncHandler(async (req, res) => {
     }
 })
 
+// save user Address
+
+const saveAddress = expressAsyncHandler(async (req, res, next) => {
+    const { _id } = req.user;
+    validateMongoDbId(_id);
+
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            _id,
+            {
+                address: req?.body?.address,
+            },
+            {
+                new: true,
+            }
+        );
+        res.json(updatedUser);
+    } catch (error) {
+        throw new Error(error);
+    }
+});
+
 //block unblock user
 
 
@@ -212,7 +234,7 @@ const logOut = expressAsyncHandler(async (req, res) => {
             httpOnly: true,
             secure: true
         })
-        return  res.sendStatus(204);
+        return res.sendStatus(204);
     }
     const updatedUser = await User.findOneAndUpdate(
         { refreshToken },
@@ -223,7 +245,7 @@ const logOut = expressAsyncHandler(async (req, res) => {
         httpOnly: true,
         secure: true
     })
-    return  res.sendStatus(204);
+    return res.sendStatus(204);
 })
 
 //password
@@ -234,18 +256,18 @@ const updatePassword = expressAsyncHandler(async (req, res) => {
     validateMongoDbId(_id);
     const user = await User.findById(_id);
     if (password) {
-      user.password = password;
-      const updatedPassword = await user.save();
-      res.json(updatedPassword);
+        user.password = password;
+        const updatedPassword = await user.save();
+        res.json(updatedPassword);
     } else {
-      res.json(user);
+        res.json(user);
     }
-  });
+});
 
-  
+
 const forgotPassword = expressAsyncHandler(async (req, res) => {
     const { email } = req.body;
-    const user = await User.findOne({email});
+    const user = await User.findOne({ email });
     console.log(user);
     if (!user) {
         throw new Error("User not fount with this email")
@@ -255,25 +277,25 @@ const forgotPassword = expressAsyncHandler(async (req, res) => {
         await user.save();
         const resetURL = `Hi, Please follow this link to reset Your Password. This link is valid till 10 minutes from now. <a href='http://localhost:3000/api/user/reset-password/${token}'>Click Here</>`;
         const data = {
-          to: email,
-          text: "Hey User",
-          subject: "Forgot Password Link",
-          html: resetURL,
+            to: email,
+            text: "Hey User",
+            subject: "Forgot Password Link",
+            html: resetURL,
         };
         await sendEmail(data);
-        res.json({token});
+        res.json({ token });
     } catch (error) {
         throw new Error(error)
     }
-  });
+});
 
-  const resetPassword = expressAsyncHandler(async (req, res) => {
+const resetPassword = expressAsyncHandler(async (req, res) => {
     const { password } = req.body;
     const { token } = req.params;
     const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
     const user = await User.findOne({
-      passwordResetToken: hashedToken,
-      passwordResetExpires: { $gt: Date.now() },
+        passwordResetToken: hashedToken,
+        passwordResetExpires: { $gt: Date.now() },
     });
     if (!user) throw new Error(" Token Expired, Please try again later");
     user.password = password;
@@ -281,8 +303,19 @@ const forgotPassword = expressAsyncHandler(async (req, res) => {
     user.passwordResetExpires = undefined;
     await user.save();
     res.json(user);
-  });
-  
+});
+
+
+const getWishlist = expressAsyncHandler(async(req,res)=>{
+    const { _id } = req.user;
+    try {
+        const findUser = await User.findById(_id).populate('wishlist');
+        res.json(findUser)
+    } catch (error) {
+        throw new Error(error)
+    }
+})
+
 
 module.exports = {
     createUser,
@@ -298,5 +331,7 @@ module.exports = {
     updatePassword,
     forgotPassword,
     resetPassword,
+    saveAddress,
+    getWishlist
 };
 
