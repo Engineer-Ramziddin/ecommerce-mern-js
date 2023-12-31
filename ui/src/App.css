@@ -19,6 +19,19 @@ a {
   display: inline-block;
 }
 
+p{
+  margin-bottom: 0;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: inherit;
+}
+
 .header-top-strip {
   border-bottom: 1px solid var(--color-3b4149);
   background-color: var(--color-131921);
