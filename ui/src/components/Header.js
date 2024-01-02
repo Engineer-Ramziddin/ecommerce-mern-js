@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import {BsSearch} from "react-icons/bs";
+import {BsSearch, BsShop} from "react-icons/bs";
 import {GoGitCompare} from "react-icons/go";
 import {VscAccount} from "react-icons/vsc";
 import {SlBasket} from "react-icons/sl";
@@ -71,6 +71,39 @@ const Header = () => {
                                         </div>
                                     </Link>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <header className="header-bottom py-3">
+                <div className="container-xxl">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="menu-bottom d-flex align-items-center gap-30">
+                                <div>
+                                    <div className="dropdown">
+                                        <BsShop size={23} className="text-white"/>
+                                        <button className="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                            Shop Categories
+                                        </button>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#">Action</a></li>
+                                            <li><a className="dropdown-item" href="#">Another action</a></li>
+                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="menu-links">
+                                    <div className="d-flex align-items-center gap-15">
+                                        <Link to={''}>Home</Link>
+                                        <Link to={''}>Our-store</Link>
+                                        <Link to={''}>Blogs</Link>
+                                        <Link to={'contact'}>Contact</Link>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
