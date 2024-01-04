@@ -1,6 +1,7 @@
 import React from 'react'
 import {TbBrandTelegram} from "react-icons/tb";
 import {Link} from "react-router-dom";
+import {BsGithub, BsInstagram, BsLinkedin, BsYoutube} from "react-icons/bs";
 
 const Footer = () => {
     return (
@@ -36,7 +37,33 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-4">
                             <h4 className="text-white mb-4">Contact Us</h4>
-                            <div></div>
+                            <div>
+                                <address className="text-white fs-6">
+                                    Hno: 227 Near Vill chopal, <br/> Sonipat, Naryana <br/>
+                                    Pin Code: 131103
+                                </address>
+                                <a href="tel: +998902229999" className="mt-3 d-block mb-1 text-white">
+                                    +998902229999
+                                </a>
+                                <a href="mailto:demo@gmail.com"
+                                   className="mt-2 d-block mb-0 text-white">
+                                    demo@gmail.com
+                                </a>
+                                <div className="social_icons d-flex align-items-center gap-30 mt-4">
+                                    <a href="" className="text-white">
+                                        <BsLinkedin/>
+                                    </a>
+                                    <a href="" className="text-white">
+                                        <BsInstagram/>
+                                    </a>
+                                    <a href="" className="text-white">
+                                        <BsGithub/>
+                                    </a>
+                                    <a href="" className="text-white">
+                                        <BsYoutube/>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div className="col-3">
                             <h4 className="text-white mb-4">Information</h4>
