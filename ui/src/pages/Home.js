@@ -7,6 +7,7 @@ import {AiOutlinePercentage} from "react-icons/ai";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
+import SpecialProduct from "../components/SpecialProduct";
 
 const Home = () => {
     return (
@@ -18,10 +19,10 @@ const Home = () => {
                             <div className="main-banner position-relative">
                                 <img
                                     className="ipad img-fluid rounded-3"
-                                    src={require("../assets/images/ipad.jpg")}
+                                    src={require("../assets/images/ipad-1-1.jpg")}
                                     alt="main-banner"
                                 />
-                                <div className="main-banner-content position-absolute">
+                                <div className="main-banner-content position-absolute text-white">
                                     <h4>SUPERCHARGED FOR PROS.</h4>
                                     <h5>iPad S13+ Pro</h5>
                                     <p>From $999.00 or $41.62/mon.</p>
@@ -34,7 +35,7 @@ const Home = () => {
                                 <div className="small-banner position-relative">
                                     <img
                                         className="img-fluid rounded-3"
-                                        src={require('assets/images/laptop.jpg')}
+                                        src={require('assets/images/nout-1-1.jpg')}
                                         alt="small-banner"
                                     />
                                     <div className="small-banner-content position-absolute">
@@ -46,20 +47,7 @@ const Home = () => {
                                 <div className="small-banner position-relative">
                                     <img
                                         className="img-fluid rounded-3"
-                                        src={require('assets/images/laptop.jpg')}
-                                        alt="small-banner"
-                                    />
-                                    <div className="small-banner-content position-absolute">
-                                        <h4>SUPERCHARGED FOR PROS.</h4>
-                                        <h5>iPad S13+ Pro</h5>
-                                        <p>From $999.00 or <br/> $41.62/mon.</p>
-                                    </div>
-
-                                </div>
-                                <div className="small-banner position-relative">
-                                    <img
-                                        className="img-fluid rounded-3"
-                                        src={require('assets/images/laptop.jpg')}
+                                        src={require('assets/images/nout-1-1.jpg')}
                                         alt="small-banner"
                                     />
                                     <div className="small-banner-content position-absolute">
@@ -72,7 +60,20 @@ const Home = () => {
                                 <div className="small-banner position-relative">
                                     <img
                                         className="img-fluid rounded-3"
-                                        src={require('assets/images/laptop.jpg')}
+                                        src={require('assets/images/nout-1-1.jpg')}
+                                        alt="small-banner"
+                                    />
+                                    <div className="small-banner-content position-absolute">
+                                        <h4>SUPERCHARGED FOR PROS.</h4>
+                                        <h5>iPad S13+ Pro</h5>
+                                        <p>From $999.00 or <br/> $41.62/mon.</p>
+                                    </div>
+
+                                </div>
+                                <div className="small-banner position-relative">
+                                    <img
+                                        className="img-fluid rounded-3"
+                                        src={require('assets/images/nout-1-1.jpg')}
                                         alt="small-banner"
                                     />
                                     <div className="small-banner-content position-absolute">
@@ -142,59 +143,160 @@ const Home = () => {
                                         <h6>Music & Gaming</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Cameras</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Smart TV</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Smart Watches</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Music & Gaming</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Cameras</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Smart TV</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
                                 </div>
                                 <div className="d-flex align-items-center  gap-20">
                                     <div>
                                         <h6>Smart Watches</h6>
                                         <p>10 items</p>
                                     </div>
-                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130}  alt=""/>
+                                    <img src="https://pngimg.com/d/photo_camera_PNG7829.png" width={130} alt=""/>
 
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="featured-wrapper home-wrapper-2 py-5">
+                <div className="container-xxl">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="section-heading">
+                                <h3>Featured Collection</h3>
+                            </div>
+                        </div>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                    </div>
+                </div>
+            </section>
+            <section className="famous-wrapper home-wrapper-2 py-5">
+                <div className="container-xxl">
+                    <div className="row">
+                        <div className="col-3">
+                            <div className="famous-card position-relative">
+                                <div className="famous-img-wrapper bg-dark">
+                                    <img className="img-fluid" src={require('assets/images/Smart Watch.png')} alt=""/>
+                                </div>
+                                <div className="famous-content position-absolute text-white">
+                                    <h5>Big Screen</h5>
+                                    <h6>Smart Watch</h6>
+                                    <p>From $399 or $16.62/mo for month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="famous-card position-relative">
+                                <div className="famous-img-wrapper bg-white">
+                                    <img className="img-fluid" src={require('assets/images/Smart Watch.png')} alt=""/>
+                                </div>
+                                <div className="famous-content position-absolute">
+                                    <h5>Big Screen</h5>
+                                    <h6>Smart Watch</h6>
+                                    <p>From $399 or $16.62/mo for month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="famous-card position-relative">
+                                <div className="famous-img-wrapper bg-white">
+                                    <img className="img-fluid" src={require('assets/images/Smart Watch.png')} alt=""/>
+                                </div>
+                                <div className="famous-content position-absolute">
+                                    <h5>Big Screen</h5>
+                                    <h6>Smart Watch</h6>
+                                    <p>From $399 or $16.62/mo for month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="famous-card position-relative">
+                                <div className="famous-img-wrapper bg-white">
+                                    <img className="img-fluid" src={require('assets/images/Smart Watch.png')} alt=""/>
+                                </div>
+                                <div className="famous-content position-absolute">
+                                    <h5>Big Screen</h5>
+                                    <h6>Smart Watch</h6>
+                                    <p>From $399 or $16.62/mo for month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="special-wrapper home-wrapper-2 py-5">
+                <div className="container-xxl">
+                    <div className="row">
+                        <div className="col-12">
+                            <h3>Special Products</h3>
+                        </div>
+                        <div className="row">
+                            <SpecialProduct/>
+                            <SpecialProduct/>
+                            <SpecialProduct/>
+                            <SpecialProduct/>
+                            <SpecialProduct/>
+                            <SpecialProduct/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="popular-wrapper home-wrapper-2 py-5">
+                <div className="container-xxl">
+                    <div className="row">
+                        <div className="col-12">
+                            <h3>Our Popular Products</h3>
+                        </div>
+                        <div className="row">
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
                         </div>
                     </div>
                 </div>
@@ -232,24 +334,6 @@ const Home = () => {
                                 </Marquee>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <section className="blog-wrapper home-wrapper-2 py-5">
-                <div className="container-xxl">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="section-heading">
-                                <h3>Featured Collection</h3>
-                            </div>
-                        </div>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
                     </div>
                 </div>
             </section>
