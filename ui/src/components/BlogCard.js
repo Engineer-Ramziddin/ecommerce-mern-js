@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 const BlogCard = () => {
     return (
         <>
-            <div className="blog-card">
+            <div className="blog-card gr-6">
                 <div className="card-image">
-                    <img className="img-fluid"
-                         src={require('assets/images/360_F_622399137_jlEDsEN0pUMZA6jMKShRoq2po69QBQXj.jpg')} alt=""/>
+                    <img className="img-fluid w-100"
+                         src={require('assets/images/laptop.jpg')} alt=""/>
                 </div>
                 <div className="blog-content">
                     <p className="date">3 Jan, 2024</p>
