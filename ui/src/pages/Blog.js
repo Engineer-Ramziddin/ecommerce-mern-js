@@ -30,14 +30,17 @@ const Blog = () => {
                             </div>
                         </div>
                         <div className="col-9">
-                            <div className="d-flex flex-wrap">
-                                <div className="d-flex gap-10 flex-wrap">
+                            <div className="row gap-10">
+                                <div className="gr-4">
                                     <BlogCard/>
+                                </div>
+                                <div className="gr-4">
                                     <BlogCard/>
+                                </div>
+                                <div className="gr-4">
                                     <BlogCard/>
-                                    <BlogCard/>
-                                    <BlogCard/>
-                                    <BlogCard/>
+                                </div>
+                                <div className="gr-4">
                                     <BlogCard/>
                                 </div>
                             </div>
