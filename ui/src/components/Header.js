@@ -47,19 +47,19 @@ const Header = () => {
                                 <div>
                                     <Link className="d-flex align-items-center gap-10 text-white">
                                         <GoGitCompare size={30}/>
-                                        <p>Compare<br/> Products</p>
+                                        <Link className="text-white" to={'compare'}>Compare<br/> Products</Link>
                                     </Link>
                                 </div>
                                 <div>
                                     <Link className="d-flex align-items-center gap-10 text-white">
                                         <FaRegStar size={30}/>
-                                        <p>Favorite<br/> wishlist</p>
+                                        <Link className="text-white" to={'wishlist'}>Favorite<br/> wishlist</Link>
                                     </Link>
                                 </div>
                                 <div>
                                     <Link className="d-flex align-items-center gap-10 text-white">
                                         <VscAccount size={30}/>
-                                        <p>Log in<br/> My Account</p>
+                                        <Link className="text-white" to={'login'}>Log in<br/> My Account</Link>
                                     </Link>
                                 </div>
                                 <div>
@@ -98,7 +98,7 @@ const Header = () => {
                                 <div className="menu-links">
                                     <div className="d-flex align-items-center gap-15">
                                         <Link to={''}>Home</Link>
-                                        <Link to={'store'}>Our-store</Link>
+                                        <Link to={'product'}>Our-store</Link>
                                         <Link to={'blog'}>Blogs</Link>
                                         <Link to={'contact'}>Contact</Link>
                                     </div>
