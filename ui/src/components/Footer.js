@@ -68,10 +68,10 @@ const Footer = () => {
                         <div className="col-3">
                             <h4 className="text-white mb-4">Information</h4>
                             <div className="footer-links d-flex flex-column">
-                                <Link to="" className="text-white py-2 mb-1">Laptops</Link>
-                                <Link to="" className="text-white py-2 mb-1">Headphones</Link>
-                                <Link to="" className="text-white py-2 mb-1">Tables</Link>
-                                <Link to="" className="text-white py-2 mb-1">Watch</Link>
+                                <Link to="privacy-policy" className="text-white py-2 mb-1">Privacy Policy</Link>
+                                <Link to="shipping-policy" className="text-white py-2 mb-1">Shipping Policy</Link>
+                                <Link to="refund-policy" className="text-white py-2 mb-1">Refund Policy</Link>
+                                <Link to="term-and-contions" className="text-white py-2 mb-1">Term And Contions</Link>
                             </div>
                         </div>
                         <div className="col-3">
