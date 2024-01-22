@@ -1,11 +1,12 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import ReactStars from "react-rating-stars-component/dist/react-stars";
 import {IoMdSwap} from "react-icons/io";
 import {Link, useLocation} from "react-router-dom";
 import {IoEyeOutline} from "react-icons/io5";
 import {FaShoppingBasket} from "react-icons/fa";
 import {BiHeart} from "react-icons/bi";
-
+import nout from "../assets/images/nout.jpg";
+import nouthover from "../assets/images/nout-hover.webp";
 
 const ProductCard = (props) => {
     const initialText = "The Lenovo IdeaPad 3i is the ideal Smart Learning notebook, combining 11th Generation Intel Core i5 processors with customized solutions for productive work and effective remote learning. It addresses issues like eye strain, posture problems, and home-based distractions while implementing intelligent thermal management for a cool and exceptionally quiet system. Additionally, the inclusion of a new privacy shutter for the camera offers you complete control over your privacy, whether you're at home or elsewhere.";
@@ -18,24 +19,23 @@ const ProductCard = (props) => {
     const {grid} = props;
     let location = useLocation();
     return (
-            <div className={`${location.pathname === "/store" ? `gr-${grid}` : "col-3"}`}>
+        <div className={`${location.pathname === "/product" ? `gr-${grid}` : "col-3"}`}>
+            <Link className="product-link" to="/product/:id">
                 <div className="product-card position-relative">
                     <div className="wishlist-icon position-absolute">
-                        <Link className="text-dark">
+                        <button className="text-dark bg-transparent">
                             <BiHeart size={25}/>
-                        </Link>
+                        </button>
                     </div>
                     <div className="product-image">
-                        <img className="img-fluid" src={require('assets/images/nout.jpg')} alt=""/>
-                        <img className="img-fluid" src={require('assets/images/nout-hover.webp')} alt=""/>
+                        <img className="img-fluid" src={nout} alt=""/>
+                        <img className="img-fluid" src={nouthover} alt=""/>
                     </div>
                     <div className="product-details">
                         <h6 className="brand">Havels</h6>
-                        <Link className="product-link" to="/product/12412">
                         <h5 className="product-title">
                             Kids headphones bulk 10 pack multi colored for students
                         </h5>
-                        </Link>
                         <ReactStars
                             count={5}
                             size={24}
@@ -69,20 +69,22 @@ const ProductCard = (props) => {
                     </div>
                     <div className="action-bar position-absolute">
                         <div className="d-flex flex-column">
-                            <Link className="text-dark">
+                            <button className="border-0 bg-transparent">
                                 <IoMdSwap size={25}/>
-                            </Link>
-                            <Link to="/product/12412" className="text-dark">
+                            </button>
+                            <button className="border-0 bg-transparent">
                                 <IoEyeOutline size={25}/>
-                            </Link>
-                            <Link className="text-dark">
+                            </button>
+                            <button className="border-0 bg-transparent">
                                 <FaShoppingBasket size={25}/>
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-    );
+            </Link>
+        </div>
+    )
+        ;
 };
 
 export default ProductCard;
