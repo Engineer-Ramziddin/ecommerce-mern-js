@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import laptop from "../assets/images/laptop.jpg";
 const BlogCard = () => {
     return (
         <>
             <div className="blog-card gr-6">
                 <div className="card-image">
                     <img className="img-fluid w-100"
-                         src={require('assets/images/laptop.jpg')} alt=""/>
+                         src={laptop} alt=""/>
                 </div>
                 <div className="blog-content">
                     <p className="date">3 Jan, 2024</p>
