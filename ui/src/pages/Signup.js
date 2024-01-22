@@ -2,6 +2,7 @@ import React from 'react';
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import {Link} from "react-router-dom";
+import CustomInput from "../components/CustomInput";
 
 const Signup = () => {
     return (
@@ -16,35 +17,35 @@ const Signup = () => {
                                  <h3>Sign Up</h3>
                                 <form action="">
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="name"
                                             name="name"
                                             placeholder="Name"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="email"
                                             name="email"
                                             placeholder="Email"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="tel"
                                             name="mobile"
                                             placeholder="Mobile Number"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="password"
                                             name="password"
                                             placeholder="Password"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
