@@ -2,6 +2,7 @@ import React from 'react';
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import {Link} from "react-router-dom";
+import CustomInput from "../components/CustomInput";
 
 const ResetPassword = () => {
     return (
@@ -16,19 +17,19 @@ const ResetPassword = () => {
                                 <h3>Reset Password</h3>
                                 <form className="form" action="">
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="password"
                                             name="password"
                                             placeholder="Password"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="password"
                                             name="confpassword"
                                             placeholder="Confirm Password"
-                                            className="form-control my-2"
+                                            classname="my-2"
                                         />
                                     </div>
                                     <div>
