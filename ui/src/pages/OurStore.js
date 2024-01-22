@@ -6,7 +6,8 @@ import {TfiLayoutGrid2Alt, TfiLayoutGrid3Alt, TfiLayoutGrid4Alt} from "react-ico
 import {ImMenu} from "react-icons/im";
 import ProductCard from "../components/ProductCard";
 import Color from "../components/Color";
-
+import React from 'react';
+import smart from "../assets/images/Smart Watch.png";
 const OurStore = () => {
     const [grid, setGrid] = useState(4);
     const gridSetter = (i) => {
@@ -127,7 +128,7 @@ const OurStore = () => {
                                 <div>
                                     <div className="random-products d-flex mb-3">
                                         <div className="w-50">
-                                            <img className="img-fluid" src={require('assets/images/Smart Watch.png')}
+                                            <img className="img-fluid" src={smart}
                                                  alt="Watch"/>
                                         </div>
                                         <div className="w-50">
@@ -146,7 +147,7 @@ const OurStore = () => {
                                     </div>
                                     <div className="random-products d-flex">
                                         <div className="w-50">
-                                            <img className="img-fluid" src={require('assets/images/Smart Watch.png')}
+                                            <img className="img-fluid" src={smart}
                                                  alt="Watch"/>
                                         </div>
                                         <div className="w-50">
@@ -171,9 +172,9 @@ const OurStore = () => {
                                 <div className="d-flex align-items-center justify-content-between">
                                     <div className="d-flex align-items-center gap-10">
                                         <p className="mb-0 sort-by-p">Sort By:</p>
-                                        <select name="" className="form-control form-select" id="">
+                                        <select name="" className="form-control form-select" id="" defaultValue={"manual"}>
                                             <option value="manual">Featured</option>
-                                            <option value="best-selling" selected="selected">Best selling</option>
+                                            <option value="best-selling">Best selling</option>
                                             <option value="price-ascending">Price, low to high</option>
                                             <option value="price-descending">Price, high to low</option>
                                             <option value="created-ascending">Date, new to old</option>
