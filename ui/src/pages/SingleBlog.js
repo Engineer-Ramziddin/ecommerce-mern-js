@@ -3,7 +3,7 @@ import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import {Link} from "react-router-dom";
 import {HiOutlineArrowLeft} from "react-icons/hi";
-
+import laptop from "../assets/images/laptop.jpg";
 const SingleBlog = () => {
     return (
         <>
@@ -18,7 +18,7 @@ const SingleBlog = () => {
                                 <h3 className="title">A beatiful sunday morning renaissance</h3>
                                 <div className="card-image">
                                     <img className="img-fluid w-100"
-                                         src={require('assets/images/laptop.jpg')} alt=""/>
+                                         src={laptop} alt=""/>
                                 </div>
                                 <p>
                                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
