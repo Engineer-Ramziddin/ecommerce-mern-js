@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactStars from "react-rating-stars-component";
 import {Link} from "react-router-dom";
-
+import nout from "../assets/images/nout.jpg";
 const SpecialProducts = () => {
     return (<div className="col-6 mb-3">
         <div className="special-product-card">
             <div className="d-flex juctify-content-between">
                 <div>
-                    <img className="img-fluid" src={require('assets/images/nout.jpg')} alt="special-product-img"/>
+                    <img className="img-fluid" src={nout} alt="special-product-img"/>
                 </div>
                 <div className="special-product-content">
                     <h5 className="brand">Havels</h5>
