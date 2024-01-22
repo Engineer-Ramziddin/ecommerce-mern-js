@@ -63,7 +63,7 @@ const Header = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link className="d-flex align-items-center gap-10 text-white">
+                                    <Link to={'card'} className="d-flex align-items-center gap-10 text-white">
                                             <SlBasket size={30}/>
                                         <div className="d-flex flex-column gap-10">
                                             <span className="badge bg-white text-dark">0</span>
