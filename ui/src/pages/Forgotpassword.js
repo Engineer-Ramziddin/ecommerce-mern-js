@@ -2,6 +2,7 @@ import React from 'react';
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import {Link} from "react-router-dom";
+import CustomInput from "../components/CustomInput";
 
 const ForgotPassword = () => {
     return (
@@ -19,11 +20,10 @@ const ForgotPassword = () => {
                                 </p>
                                 <form className="form" action="">
                                     <div>
-                                        <input
+                                        <CustomInput
                                             type="email"
                                             name="email"
                                             placeholder="Email"
-                                            className="form-control"
                                         />
                                     </div>
                                     <div>
