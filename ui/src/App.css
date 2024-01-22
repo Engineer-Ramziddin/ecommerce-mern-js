@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+.d-flex,
+.align-items-center,
+.justify-content-between
+.flex-wrap
+
+{}
+
 
 :root {
     --color-131921: #131921;
@@ -47,7 +54,7 @@ p {
     color: white;
     font-size: 14px;
     padding: 13px 33px;
-    border-radius: 15px;
+    border-radius: 35px;
 }
 
 .button:hover {
@@ -448,6 +455,7 @@ footer .input-group .input-group-text {
     height: 500px;
 }
 
+
 /*our store*/
 
 .filter-card {
@@ -725,8 +733,8 @@ footer .input-group .input-group-text {
 }
 
 .review-head p,
-.review-head a{
-font-size: 14px;
+.review-head a {
+    font-size: 14px;
     color: var(--color-777777);
 }
 
@@ -734,13 +742,113 @@ font-size: 14px;
     background-color: white;
     padding: 30px;
 }
+
 .reviews p {
     font-size: 14px;
     color: var(--color-777777);
 }
 
 .main-product-image {
-padding: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main-product-image img {
+    object-fit: cover;
+}
+
+.other-product-images {
+    padding: 20px;
+}
+
+.other-product-images > div {
+    padding: 20px;
+    width: 48%;
+    border: 1px solid black;
+}
+
+.main-product-details {
+    padding: 20px;
     background-color: white;
     border-radius: 10px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.main-product-details a {
+    font-size: 14px;
+    color: var(--color-777777)
+}
+
+.main-product-details h3.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-1c1c1b);
+    margin-bottom: 10px;
+}
+
+.ReactImageMagnify {
+    z-index: 100;
+}
+
+.product-heading {
+    font-size: 14px;
+    color: var(--color-1c1c1b);
+    margin-bottom: 0px;
+}
+
+.product-data {
+    font-size: 13px;
+    color: var(--color-777777);
+    margin-bottom: 0px;
+}
+
+.card-header,
+.card-data{
+    border-bottom: 1px solid #eaeaea;
+}
+
+.card-header h4 {
+    font-size: 13px;
+    color: var(--color-777777);
+}
+
+.card-col-1 {
+    width: 40%;
+}
+.card-col-2 {
+    width: 10%;
+}
+.card-col-3 {
+    width: 15%;
+}
+.card-col-4 {
+    width: 15%;
+}
+
+
+.card-col-1 p {
+    color: var(--color-777777);
+    font-size: 14px;
+}
+
+.card-data h5.price {
+    font-size: 14px;
+    color: var(--color-1c1c1b);
+}
+
+.checkout-img {
+    min-width: 100%;
+}
+
+.total {
+    font-size: 14px;
+    color: var(--color-1c1c1b);
+}
+
+.total-price {
+    font-size: 16px;
+    color: var(--color-777777);
 }
