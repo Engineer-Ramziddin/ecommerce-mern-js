@@ -15,6 +15,8 @@ const couponRouter = require("./routes/couponRoute");
 const brandRouter = require("./routes/brandRoute");
 const colorRouter = require("./routes/colorRoute");
 const enqRouter = require("./routes/enqRoute");
+const uploadRouter = require("./routes/uploadRoute");
+
 
 const port = process.env.PORT || 4000
 
@@ -33,6 +35,8 @@ app.use("/api/coupon", couponRouter);
 app.use("/api/brand", brandRouter);
 app.use("/api/color", colorRouter);
 app.use("/api/enquiry", enqRouter);
+app.use("/api/upload", uploadRouter);
+
 app.use("/", (req, res) => {
     res.send("hello from serve")
 });
