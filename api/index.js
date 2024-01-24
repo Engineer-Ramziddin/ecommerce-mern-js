@@ -16,7 +16,9 @@ const brandRouter = require("./routes/brandRoute");
 const colorRouter = require("./routes/colorRoute");
 const enqRouter = require("./routes/enqRoute");
 const uploadRouter = require("./routes/uploadRoute");
+const categoryRouter = require("./routes/prodcategoryRoute");
 
+const cors = require("cors");
 
 const port = process.env.PORT || 4000
 
@@ -26,10 +28,12 @@ app.use(morgan("dev"))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
+app.use(cors());
 
 app.use('/api/user', authRouter);
 app.use('/api/product', productRoute);
 app.use('/api/blog', blogRoute);
+app.use("/api/category", categoryRouter);
 app.use("/api/blogcategory", blogcategoryRouter);
 app.use("/api/coupon", couponRouter);
 app.use("/api/brand", brandRouter);

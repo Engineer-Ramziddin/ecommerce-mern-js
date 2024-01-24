@@ -13,16 +13,15 @@ const uploadImages = asyncHandler(async (req, res) => {
     for (const file of files) {
       const { path } = file;
       const newpath = await uploader(path);
-      console.log(path);
       urls.push(newpath);
-      fs.unlink(path, function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        } 
-        console.log(`fayl o'chirildi: ${path}`);
-    })
-      // fs.unlinkSync(path);
+    //   fs.unlink(path, function (err) {
+    //     if (err) {
+    //         console.log(err);
+    //         return;
+    //     }
+    //     console.log(`fayl o'chirildi: ${path}`);
+    // })
+      fs.unlinkSync(path);
     }
     const images = urls.map((file) => {
       return file;

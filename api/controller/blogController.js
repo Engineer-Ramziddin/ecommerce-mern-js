@@ -7,7 +7,7 @@ const fs = require("fs");
 const createBlog = expressAsyncHandler(async (req, res) => {
     try {
         const newBlog = await Blog.create(req.body);
-        res.json({ newBlog });
+        res.json(newBlog);
     } catch (error) {
         throw new Error(error);
     }
@@ -47,7 +47,7 @@ const getAllBlog = expressAsyncHandler(async (req, res) => {
                 msg: "Blogs not found"
             })
         }
-        res.json({ blogs });
+        res.json(blogs);
     } catch (error) {
         throw new Error(error);
     }
@@ -177,13 +177,17 @@ const uploadImages = expressAsyncHandler(async (req, res) => {
     const { id } = req.params;
     validateMongoDbId(id);
     try {
+        const uploader = (path) => cloudinaryUploadImg(path, "images");
         const urls = [];
         const files = req.files;
         for (const file of files) {
             const { path } = file;
-            urls.push(path);
+            const newpath = await uploader(path);
+            console.log(newpath);
+            urls.push(newpath);
+            fs.unlinkSync(path);
         }
-        await Blog.findByIdAndUpdate(
+        const findBlog = await Blog.findByIdAndUpdate(
             id,
             {
                 images: urls.map((file) => {
@@ -194,9 +198,8 @@ const uploadImages = expressAsyncHandler(async (req, res) => {
                 new: true,
             }
         );
-        res.json({
-            msg: "Rasm mufaqqiyatli yuklandi",
-        });
+        console.log(findBlog)
+        res.json(findBlog);
     } catch (error) {
         throw new Error(error);
     }
