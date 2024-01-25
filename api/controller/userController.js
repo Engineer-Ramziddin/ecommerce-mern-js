@@ -7,7 +7,7 @@ const Product = require("../models/productModel");
 const expressAsyncHandler = require("express-async-handler");
 const { generateToken } = require("../config/jwtToken");
 const { generateRefreshToken } = require("../config/refreshtoken");
-const validateMongoDbId = require("../utils/validateMongodbId");
+const validateMongoDbId = require("../utils/validateMongoDbId");
 const jwt = require("jsonwebtoken");
 const { sendEmail } = require("./emailController");
 const crypto = require("crypto");
@@ -40,25 +40,54 @@ const loginUser = expressAsyncHandler(async (req, res) => {
             httpOnly: true,
             maxAge: 1 * 60 * 60 * 1000,
         });
-        res.json([{
+        res.json({
             _id: findUser?._id,
-            fristname: findUser?.fristname,
+            firstname: findUser?.firstname,
             lastname: findUser?.lastname,
             email: findUser?.email,
             mobile: findUser?.mobile,
             token: generateToken(findUser?._id),
-        }]);
+        });
     } else {
         throw new Error("Yaroqsiz hisob ma'lumotlari")
     }
 })
 
+const loginAdmin = expressAsyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    // check if user exists or not
+    const findAdmin = await User.findOne({ email });
+    if (findAdmin.role !== "admin") throw new Error("Not Authorised");
+    if (findAdmin && (await findAdmin.isPasswordMatched(password))) {
+        const refreshToken = await generateRefreshToken(findAdmin?._id);
+        const updateuser = await User.findByIdAndUpdate(
+            findAdmin.id,
+            {
+                refreshToken: refreshToken,
+            },
+            { new: true }
+        );
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            maxAge: 72 * 60 * 60 * 1000,
+        });
+        res.json({
+            _id: findAdmin?._id,
+            firstname: findAdmin?.firstname,
+            lastname: findAdmin?.lastname,
+            email: findAdmin?.email,
+            mobile: findAdmin?.mobile,
+            token: generateToken(findAdmin?._id),
+        });
+    } else {
+        throw new Error("Invalid Credentials");
+    }
+});
+
 const getAllUser = expressAsyncHandler(async (req, res) => {
     try {
         const getUsers = await User.find()
-        res.json({
-            getUsers,
-        });
+        res.json(getUsers);
     } catch (error) {
         throw new Error(error)
     }
@@ -120,7 +149,7 @@ const updatedUser = expressAsyncHandler(async (req, res) => {
         const updateaUser = await User.findByIdAndUpdate(
             id,
             {
-                fristname: req?.body?.fristname,
+                firstname: req?.body?.firstname,
                 lastname: req?.body?.lastname,
                 email: req?.body?.email,
                 mobile: req?.body?.mobile,
@@ -411,7 +440,8 @@ const userCart = expressAsyncHandler(async (req, res) => {
   });
   
   const createOrder = expressAsyncHandler(async (req, res) => {
-    const { COD, couponApplied } = req.body;
+      req.user = undefined;
+      const { COD, couponApplied } = req.body;
     const { _id } = req.user;
     validateMongoDbId(_id);
     try {
@@ -538,5 +568,6 @@ module.exports = {
   updateOrderStatus,
   getAllOrders,
   getOrderByUserId,
+    loginAdmin
 };
 

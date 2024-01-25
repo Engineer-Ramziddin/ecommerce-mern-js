@@ -1,12 +1,12 @@
 const expressAsyncHandler = require("express-async-handler");
-const validateMongoDbId = require("../utils/validateMongodbId");
+const validateMongoDbId = require("../utils/validateMongoDbId");
 const User = require('../models/userModel');
 const Blog = require('../models/blogModel');
 const fs = require("fs");
 
 const createBlog = expressAsyncHandler(async (req, res) => {
     try {
-        const newBlog = await Blog.create(req.body);
+        const newBlog = await Blnpmog.create(req.body);
         res.json(newBlog);
     } catch (error) {
         throw new Error(error);

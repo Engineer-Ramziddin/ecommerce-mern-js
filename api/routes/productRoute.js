@@ -17,7 +17,7 @@ router.put(
 
 router.get('/', getAllProduct);
 router.get('/:id', getProduct);
-router.post('/create', authMiddleware, isAdmin, createProduct);
+router.post('/', authMiddleware, isAdmin, createProduct);
 router.put('/wishlist', authMiddleware, addToWishlist);
 router.put('/rating', authMiddleware, rating);
 router.put('/update/:id', authMiddleware, isAdmin, updateProduct);

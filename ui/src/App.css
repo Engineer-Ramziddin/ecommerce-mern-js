@@ -49,6 +49,11 @@ p {
     margin-bottom: 30px;
 }
 
+.error {
+    color: red;
+    margin-left: 4px;
+}
+
 .button {
     background-color: var(--color-232f3e);
     color: white;

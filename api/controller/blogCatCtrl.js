@@ -1,6 +1,6 @@
 const expressAsyncHandler = require("express-async-handler");
 const Category = require("../models/blogCatModel");
-const validateMongoDbId = require("../utils/validateMongodbId");
+const validateMongoDbId = require("../utils/validateMongoDbId");
 
 const createCategory = expressAsyncHandler(async (req, res) => {
   try {
