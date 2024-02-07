@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import uploadService from "./uploadService";
+import { toast } from "react-toastify";
 
 export const uploadImg = createAsyncThunk(
   "upload/images",
@@ -46,6 +47,12 @@ export const uploadSlice = createSlice({
         state.isError = false;
         state.isSuccess = true;
         state.images = action.payload;
+        if (action.payload[0].url) {
+        toast.success("Picture uploaded");
+        } else {
+          toast.error("Something went wrong");
+        }
+
       })
       .addCase(uploadImg.rejected, (state, action) => {
         state.isLoading = false;
