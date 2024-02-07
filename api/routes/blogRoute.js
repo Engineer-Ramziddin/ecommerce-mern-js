@@ -18,7 +18,7 @@ router.put(
 
 router.get('/', getAllBlog);
 router.put('/:id', getBlog);
-router.post('/create', authMiddleware, isAdmin, createBlog);
+router.post('/', authMiddleware, isAdmin, createBlog);
 router.put('/update/:id', authMiddleware, isAdmin, updateBlog);
 router.delete('/:id', authMiddleware, isAdmin, deleteBlog);
 

@@ -80,6 +80,7 @@ export const productSlice = createSlice({
       })
       .addCase(addWishlist.pending, (state) => {
         state.isLoading = true;
+        
       })
       .addCase(addWishlist.fulfilled, (state, action) => {
         state.isLoading = false;

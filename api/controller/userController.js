@@ -241,8 +241,9 @@ const handlerRefreshToken = expressAsyncHandler(async (req, res) => {
     if (!cookie?.refreshToken) {
         throw new Error("No Refresh Token In Cookies")
     }
-    const refreshToken = cookie.refreshToken;
-    const user = await User.findOne({ refreshToken })
+    const refreshToken = req.body.token;
+
+    const user = await User.findOne({ refreshToken });
     if (!user) {
         throw new Error('NO refresh token persent in db or not matched')
     }
