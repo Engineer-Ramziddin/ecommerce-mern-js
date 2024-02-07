@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const createBlog = expressAsyncHandler(async (req, res) => {
     try {
-        const newBlog = await Blnpmog.create(req.body);
+        const newBlog = await Blog.create(req.body);
         res.json(newBlog);
     } catch (error) {
         throw new Error(error);
